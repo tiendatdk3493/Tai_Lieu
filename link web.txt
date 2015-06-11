@@ -5,3 +5,4 @@ https://docs.google.com/document/d/1dmrkPubKBk9rFTOx139PQTGGoYyBoTk9XbDODtcBXkk/
 http://www.hocmangcoban.tk/2014/04/mo-hinh-osi-va-tcpip.html
 http://vnexperts.net/bai-viet-ky-thuat/networking/79-cn-bn-v-tcpip.html
 http://read.pudn.com/downloads164/ebook/746990/TCP-IP.pdf
+http://expressmagazine.net/development/1521/tong-quan-ve-email-va-giao-thuc-mail
