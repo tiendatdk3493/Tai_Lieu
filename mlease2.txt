@@ -1,0 +1,300 @@
+  Time Outs       : 2
+  This trial used 4.000 seconds.
+
+
+C:\Users\nguyentiendat\Desktop>ping 192.168.88.40
+
+Pinging 192.168.88.40 with 32 bytes of data:
+Reply from 192.168.88.40: bytes=32 time=7ms TTL=128
+Reply from 192.168.88.40: bytes=32 time=8ms TTL=128
+Reply from 192.168.88.40: bytes=32 time=8ms TTL=128
+
+Ping statistics for 192.168.88.40:
+    Packets: Sent = 3, Received = 3, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 7ms, Maximum = 8ms, Average = 7ms
+Control-C
+^C
+C:\Users\nguyentiendat\Desktop>perl mlease2.pl -if 192.168.88.130 -s 192.168.88.40 -z 2 -d 2 -q 2
+using 192.168.88.130:67
+
+Trial 1
+---------------------------------------------------
+Sending DHCP DISCOVER from 192.168.88.130 to 192.168.88.40 for 0fffff000001 (server=192.168.88.40)
+TIMED OUT waiting for response.
+Sending DHCP DISCOVER from 192.168.88.130 to 192.168.88.40 for 0fffff000002 (server=192.168.88.40)
+TIMED OUT waiting for response.
+  This Cluster used 4.000 seconds.
+
+  ---------------------------
+  -- Summary  for this  test
+  ---------------------------
+  DHCP Discovers  : 2
+  Time Outs       : 2
+  This trial used 4.000 seconds.
+
+
+C:\Users\nguyentiendat\Desktop>perl mlease2.pl -if 192.168.88.130 -s 192.168.88.40 -z 2 -d 2 -q 2
+using 192.168.88.130:67
+
+Trial 1
+---------------------------------------------------
+Sending DHCP DISCOVER from 192.168.88.130 to 192.168.88.40 for 0fffff000001 (server=192.168.88.40)
+TIMED OUT waiting for response.
+Sending DHCP DISCOVER from 192.168.88.130 to 192.168.88.40 for 0fffff000002 (server=192.168.88.40)
+TIMED OUT waiting for response.
+  This Cluster used 4.000 seconds.
+
+  ---------------------------
+  -- Summary  for this  test
+  ---------------------------
+  DHCP Discovers  : 2
+  Time Outs       : 2
+  This trial used 4.000 seconds.
+
+
+C:\Users\nguyentiendat\Desktop>perl mlease2.pl -if 192.168.88.130 -s 192.168.88.40 -z 2 -d 2 -q 2
+using 192.168.88.130:67
+
+Trial 1
+---------------------------------------------------
+Sending DHCP DISCOVER from 192.168.88.130 to 192.168.88.40 for 0fffff000001 (server=192.168.88.40)
+TIMED OUT waiting for response.
+Sending DHCP DISCOVER from 192.168.88.130 to 192.168.88.40 for 0fffff000002 (server=192.168.88.40)
+TIMED OUT waiting for response.
+  This Cluster used 4.000 seconds.
+
+  ---------------------------
+  -- Summary  for this  test
+  ---------------------------
+  DHCP Discovers  : 2
+  Time Outs       : 2
+  This trial used 4.000 seconds.
+
+
+C:\Users\nguyentiendat\Desktop>perl mlease2.pl -g 192.168.88.130 -if 192.168.88.130 -s 192.168.88.40 -z 2 -d 2 -q 2
+using 192.168.88.130:67
+
+Trial 1
+---------------------------------------------------
+Sending DHCP DISCOVER from 192.168.88.130 to 192.168.88.40 for 0fffff000001 (server=192.168.88.40)
+TIMED OUT waiting for response.
+Sending DHCP DISCOVER from 192.168.88.130 to 192.168.88.40 for 0fffff000002 (server=192.168.88.40)
+TIMED OUT waiting for response.
+  This Cluster used 4.000 seconds.
+
+  ---------------------------
+  -- Summary  for this  test
+  ---------------------------
+  DHCP Discovers  : 2
+  Time Outs       : 2
+  This trial used 4.000 seconds.
+
+
+C:\Users\nguyentiendat\Desktop>perl mlease2.pl -h
+
+Usage: mlease2.pl <flag> <value>
+
+        Flags   Values
+        -a      Starting Hardware Address in decimal. (default: 1)
+        -A      Starting Hardware Address in hex. (default: 1)
+        -b      Send a BootP REQUEST and wait for a BootP REPLY.
+        -bf     Fill in the bootfile section of packet.
+        -B      Send a bad packet.
+        -c      IP address to put in CIAddr field. (default: 0.0.0.0)
+        -cat    Send Concatinated options.  Supported Option 81 and 250
+        -C      Cluster of discovers (default: 25)
+        -d      Total number of DISCOVER messages to send (default: 5)
+        -D      Have client request a domain. [Option 15]
+        -en,-En FQDN value to pass to DHCP server. [Option 81]
+                        -en Fixed; -En 5 digit numeric appendage.
+                        Where n is the numeric representation of the flag
+                        byte.  A value of 0 is for ASCII encoding.  A
+                        value containing 4 will do DNS encoding.
+        -es     Only process responses from this server
+        -f      Name of the log file.
+        -file   Name of input file for canned test cases.
+        -F      Send copy of the discover to the Failover DHCP server IP Addr
+        -g      GIAddr - Router address (default: 0.0.0.0)
+        -h, -?  Show Help - This screen.
+        -H      Complete MAC Address (default: 0fffff000001)
+                         Accepts key words zero and one.
+        -i      Send INFORM after DORA. Enter number of INFORMs. (default: 0)
+        -if     Select a specific interface for binding. Values can represented
+                         by interface name or IP Address.  (default: eth0)
+        -I1     Relay Agent Option. [Option 82 Suboption 1]
+                        Enter Hex string for Circuit ID or 1 to have it generated.
+        -I2     Relay Agent Option. [Option 82 Suboption 2]
+                        Enter Hex string for Remote ID or 1 to have it generated.
+        -I4     Relay Agent Option [Option 82 Suboption 4]
+                         Valid value is 1.
+        -I5     Relay Agent Option [Option 82 Suboption 5]
+                        Enter IP address.
+        -I9     Relay Agent Option [Option 82 Suboption 9]
+                        Enter Hex string.
+        -Icisco Terminate packets containing Option 82 with pad.
+        -j      Debug level for log Values: 1 - 3 (default: 2)
+        -k      ReDISCOVER after NAK.  values 0 or 3 (default: 3)
+        -K      Option 250 - enter hex string.
+        -l      RELEASE address after DORA.  Values: (default: 1)
+                   1 RELEASE in this cluster
+                   2 RELEASE at the end of the trial
+                   3 reDISCOVER in next cluster after RELEASE (this cluster)
+                   4 reDISCOVER at end of trial after RELEASE (this cluster)
+                   5 reDISCOVER after RELEASE at the end of the trial
+        -lc     RELEASE after DORA Counter (default: 1)
+        -L      Requested lease time. (value in seconds or "i" for infinity)
+        -LQ     LEASE QUERY <type> <value>
+                        <type> = ip, mac, id
+                        <value> = IP address or MAC address where appropriate.
+        -m      MAC Address prefix. (default: 0fffff)
+        -M      DHCP message type (1 3 4 7 8 10) Disc, Req, Decl, Rel, Inf.
+                        DHCP Lease Query
+        -n, -N  Hostname. [Option 12] (default: dhcp-client-xxxxx)
+                         -n Fixed; -N 5 digit numeric appendage.
+        -NIS    NIS Domain. [Option 40]  Enter String.
+        -NTRAS  Send an NT RAS packet.  Do not wait for response.
+        -o      Old IP Address. [Option 50].
+        -O      Option Request List [Option 55] - comma seperated option list.
+        -p      Received packets from server will be decoded in debug 1 or higher.
+        -P      Client Identifier [Option 61] - Enter 10 digit Phone Number or
+                        an IP address in hex.
+        -q      Screen logging level values 0 - 3 (default: 0)
+        -r      Renew address after DORA.  Values: (default: 1)
+                   1 RENEW in this cluster
+                   2 RENEW at the end of the trial
+        -rc     Number of DHCP renews after DORA. (default: 1)
+        -renew   RENEW address. Enter CIADDR
+        -rg     Use GIAddr for renews.  Values 0 or 1.  (default: 1)
+        -R      Do not wait for server response.
+        -RC     Rapid Commit [Option 80]
+        -RAS2k  Send an 2K RAS packet.  Do not wait for response.
+        -s      DHCP server IP address. (default: 0.0.0.0)
+        -si     Server Identifier for Renews (default: Nul)
+        -sn     TFTP Server Name.
+        -ss     DHCP split scope server IP address.
+        -S      Subnet Selection Option. [Option 118]
+        -t      Times to repeat the DORA process.
+        -T      Number of trial summary printings to supress. (default:1)
+                        Applied only to Debug 0 and 1 output to the screen.
+        -u      User Class. [Option 77]
+        -U      User Class. [Option 77] as per RFC 3004.  Period delimited.
+        -v      Version information.
+        -vc     Vendor Class. [Option 60]
+        -V      Vendor Specific Information. [Option 43] - enter hex string.
+        -w      Options required in OFFER to send a REQUEST. (Comma delimited)
+        -wo     Options prohibited in OFFER to send a REQUEST. (Comma delim.)
+        -x      DECLINE after DORA, ReDISCOVER count (values 0-99) (default: 0)
+        -y      Resend packets timed out awaiting response. (default: 0)
+        -ymax   Maximum number of timeouts to retry. (default: 1000)
+        -z      Time in seconds, to wait for server response. (default: .5)
+        -zz     Consecutive timeouts before cluster is terminated. (default: 2)
+        -Z      Time in seconds, between each test cluster. (default: 0)
+        -ZZ     Time in seconds, between each trial. (default: 0)
+
+
+C:\Users\nguyentiendat\Desktop>perl mlease2.pl -g 192.168.88.130 -if 192.168.88.130 -s 192.168.88.40 -z 2 -d 2 -q 2
+using 192.168.88.130:67
+
+Trial 1
+---------------------------------------------------
+Sending DHCP DISCOVER from 192.168.88.130 to 192.168.88.40 for 0fffff000001 (server=192.168.88.40)
+TIMED OUT waiting for response.
+Sending DHCP DISCOVER from 192.168.88.130 to 192.168.88.40 for 0fffff000002 (server=192.168.88.40)
+TIMED OUT waiting for response.
+  This Cluster used 4.000 seconds.
+
+  ---------------------------
+  -- Summary  for this  test
+  ---------------------------
+  DHCP Discovers  : 2
+  Time Outs       : 2
+  This trial used 4.000 seconds.
+
+
+C:\Users\nguyentiendat\Desktop>perl mlease2.pl -g 192.168.88.130 -if 192.168.88.130 -s 192.168.88.40 -z 2 -d 2 -q 2
+using 192.168.88.130:67
+
+Trial 1
+---------------------------------------------------
+Sending DHCP DISCOVER from 192.168.88.130 to 192.168.88.40 for 0fffff000001 (server=192.168.88.40)
+TIMED OUT waiting for response.
+Sending DHCP DISCOVER from 192.168.88.130 to 192.168.88.40 for 0fffff000002 (server=192.168.88.40)
+TIMED OUT waiting for response.
+  This Cluster used 4.000 seconds.
+
+  ---------------------------
+  -- Summary  for this  test
+  ---------------------------
+  DHCP Discovers  : 2
+  Time Outs       : 2
+  This trial used 4.000 seconds.
+
+
+C:\Users\nguyentiendat\Desktop>perl mlease2.pl -g 192.168.88.130 -if 192.168.88.130 -s 192.168.88.40 -z 2 -d 2 -q 2
+using 192.168.88.130:67
+
+Trial 1
+---------------------------------------------------
+Sending DHCP DISCOVER from 192.168.88.130 to 192.168.88.40 for 0fffff000001 (server=192.168.88.40)
+Received DHCP OFFER from 192.168.88.40 (source: 192.168.88.40) for 0fffff000001 to use 192.168.88.154Sending DHCP DISCOVER from 192.168.88.130 to 192.168.88.40 for 0fffff000002 (server=192.168.88.40)
+TIMED OUT waiting for response.
+Sending DHCP REQUEST from 192.168.88.130 to 192.168.88.40 for 0fffff000001 (server=192.168.88.40)
+Received DHCP ACK from 192.168.88.40 (source: 192.168.88.40) for 0fffff000001 to use 192.168.88.154  This Cluster used 2.000 seconds.
+
+  ---------------------------
+  -- Summary  for this  test
+  ---------------------------
+  DHCP Discovers  : 2
+  DHCP Offers     : 1
+  DHCP Requests   : 1
+  DHCP Acks       : 1
+  Time Outs       : 1
+  This trial used 2.000 seconds.
+
+
+C:\Users\nguyentiendat\Desktop>perl mlease2.pl -g 192.168.88.130 -if 192.168.88.130 -s 192.168.88.40 -z 2 -d 2 -q 2
+using 192.168.88.130:67
+
+Trial 1
+---------------------------------------------------
+Sending DHCP DISCOVER from 192.168.88.130 to 192.168.88.40 for 0fffff000001 (server=192.168.88.40)
+Received DHCP OFFER from 192.168.88.40 (source: 192.168.88.40) for 0fffff000001 to use 192.168.88.154Sending DHCP DISCOVER from 192.168.88.130 to 192.168.88.40 for 0fffff000002 (server=192.168.88.40)
+TIMED OUT waiting for response.
+Sending DHCP REQUEST from 192.168.88.130 to 192.168.88.40 for 0fffff000001 (server=192.168.88.40)
+Received DHCP ACK from 192.168.88.40 (source: 192.168.88.40) for 0fffff000001 to use 192.168.88.154  This Cluster used 2.000 seconds.
+
+  ---------------------------
+  -- Summary  for this  test
+  ---------------------------
+  DHCP Discovers  : 2
+  DHCP Offers     : 1
+  DHCP Requests   : 1
+  DHCP Acks       : 1
+  Time Outs       : 1
+  This trial used 2.000 seconds.
+
+
+C:\Users\nguyentiendat\Desktop>perl mlease2.pl -g 192.168.88.130 -if 192.168.88.130 -s 192.168.88.40 -z 2 -d 2 -q 2
+using 192.168.88.130:67
+
+Trial 1
+---------------------------------------------------
+Sending DHCP DISCOVER from 192.168.88.130 to 192.168.88.40 for 0fffff000001 (server=192.168.88.40)
+Received DHCP OFFER from 192.168.88.40 (source: 192.168.88.40) for 0fffff000001 to use 192.168.88.154Sending DHCP DISCOVER from 192.168.88.130 to 192.168.88.40 for 0fffff000002 (server=192.168.88.40)
+TIMED OUT waiting for response.
+Sending DHCP REQUEST from 192.168.88.130 to 192.168.88.40 for 0fffff000001 (server=192.168.88.40)
+Received DHCP ACK from 192.168.88.40 (source: 192.168.88.40) for 0fffff000001 to use 192.168.88.154  This Cluster used 3.000 seconds.
+
+  ---------------------------
+  -- Summary  for this  test
+  ---------------------------
+  DHCP Discovers  : 2
+  DHCP Offers     : 1
+  DHCP Requests   : 1
+  DHCP Acks       : 1
+  Time Outs       : 1
+  This trial used 3.000 seconds.
+
+
+C:\Users\nguyentiendat\Desktop>
